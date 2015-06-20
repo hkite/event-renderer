@@ -35,7 +35,8 @@
                 <section style="width: 0px; border-right-width: 15px; border-right-style: solid; border-right-color: rgb(142, 201, 101); display: inline-block; vertical-align: middle; border-top-width: 8px !important; border-top-style: solid !important; border-top-color: transparent !important; border-bottom-width: 8px !important; border-bottom-style: solid !important; border-bottom-color: transparent !important; border-left-color: rgb(142, 201, 101);">
                 </section>
                 
-                <section style="display: inline-block; width: 90%; padding: 8px; border-radius: 0.5em; line-height: 1.5em; vertical-align: middle; font-family: inherit; font-style: 16px; color: rgb(255, 255, 255); background-color: rgb(142, 201, 101);">本期活动推送简介。
+                <section style="display: inline-block; width: 90%; padding: 8px; border-radius: 0.5em; line-height: 1.5em; vertical-align: middle; font-family: inherit; font-style: 16px; color: rgb(255, 255, 255); background-color: rgb(142, 201, 101);">
+                    {{ metas['_meta_introduction'] }}
                 </section>
             </section>
         </section>
@@ -79,7 +80,7 @@
         {% endfor %}
         
         
-        <section style="width:100%;border:none;padding:0px;"><hr style="white-space: normal;"><p style="white-space: normal; color: rgb(192, 0, 0);font-weight: bold; line-height: 1.5; text-align: justify;">本文以 CC BY 3.0 发布；港漂IT圈首发<br>图片素材来自XXX网站</p><hr style="white-space: normal;"><p dir="ltr">作者：XXX</p><hr style="white-space: normal;"><p style="line-height: 2em;" dir="ltr">投稿、加入我们、打招呼、纯调戏 ☞☞☞ 请邮件 hello@hkite.org</p>
+        <section style="width:100%;border:none;padding:0px;"><hr style="white-space: normal;"><p style="white-space: normal; color: rgb(192, 0, 0);font-weight: bold; line-height: 1.5; text-align: justify;">本文以 CC BY 3.0 发布；港漂IT圈首发<br>{{ metas['_meta_copyright'] }}</p><hr style="white-space: normal;"><p dir="ltr">作者：{{ metas['_meta_author'] }}</p><hr style="white-space: normal;"><p style="line-height: 2em;" dir="ltr">投稿、加入我们、打招呼、纯调戏 ☞☞☞ 请邮件 hello@hkite.org</p>
         </section>
         
         

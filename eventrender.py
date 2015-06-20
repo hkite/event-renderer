@@ -32,15 +32,33 @@ def main():
         
         a_dir='e/%s'% id
         a_fn='%s/index.html' % a_dir
-        
+
+        # Meta information is mixed with details due to our design limitation.
+        # Now we pop out meta information from details list.
+
+        _mixed_details = details
+        details = []
+        metas = {
+            '_meta_author': '',
+            '_meta_introduction': '',
+            '_meta_copyright': '',
+        }
+
+        for d in _mixed_details:
+            if d[1]['title'].startswith('_meta_'):
+                # Meta
+                metas[d[1]['title']] = d[1]['introduction']
+            else:
+                # Event
+                details.append(d)
+
+        print metas
+
         if not os.path.exists(a_dir):
             os.mkdir(a_dir)
-        open(a_fn,'w').write(template.render(details=details))
+        open(a_fn,'w').write(template.render(details=details, metas=metas))
 
 
 if __name__ == '__main__':
-    main();
-
-
-
+    main()
 
